@@ -11,7 +11,7 @@ function App() {
     duration: 10,
   });
 
-  const inputIsValid = userInput.duration <= 0;
+  // const inputIsValid = userInput.duration <= 0;
   const handleChange = (inputIdentifier, newValue) => {
     setUserInput((prevState) => {
       return {
@@ -24,10 +24,7 @@ function App() {
     <>
       <Header />
       <UserInput userInput={userInput} onChange={handleChange} />
-      {inputIsValid && (
-        <p className="center">Please enter a duration grater than 0.</p>
-      )}
-      {!inputIsValid && <Result input={userInput} />}
+      <Result input={userInput} />
     </>
   );
 }
